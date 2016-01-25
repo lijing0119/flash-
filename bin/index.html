@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>vod</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript" src="js/swfobject.js"></script>
+		
+		<script type="text/javascript">
+		//http://58.215.38.72/444/1/72/dbe451513f8edfb4bf6f1c30ed10211a-f4v-h264-aac-253-32-215528.0-7816380-1436987159159-a3b8c9604cf22f46ff1e786d4f927fce-1-00-00-00.f4v?vid=100825372&lp=8092&lroot=/11&kfd=1&cmd=0&uuid=7AB3F4B021BD6F755BAD2F49EE161BD7E6891BE6&tm=1451439891&key=28804ced32dc0997c943c57f0e9ca56a&diskid=320&lr=0&nlh=0&check=1&id=ku6_vod&usrip=219.232.105.120&uloc=1.1.1&ipsm=1&ext=.f4v
+		var str ='{"list": ['
+             +'{'
+             +'"playUrl": "0.MP4",'
+             +'"timezone": "GMT+08:00",'
+             +'"timezoneCity": "Asia/Shanghai",'
+             +'"bigImage": null,'
+             +'"smallImage": null,'
+             +'"videoTimeLength": null,'
+             +'"from": "2015-10-26 10:20:46",'
+             +'"to": "2015-10-26 14:30:46"'
+			+'}]}';
+		//var flash = new FlashCallJs("transparent","vod","vod.swf","800","571")
+		var flashvars = {url:escape(str)};
+		var params = { swliveconnect:'true', allowScriptAccess:'always', quality:'high', wmode: "transparent"};
+		var attributes = { id:'vod', name:'testFlash' };
+		swfobject.embedSWF('vod.swf', 'divFlashReplace', '800', '571', '10.0.0', 'expressInstall.swf', flashvars, params, attributes);
+		
+		
+		function jsSendExtint() {
+			//var obj = swfobject.getObjectById('testFlash');
+			vod.callAsMain("0.mp4");
+			
+			
+		}
+		//var clearID=setInterval(jsSendExtint,1000);
+		function sendHtml(str)
+			{
+				console.log("---");
+				if(str=="true")
+				{
+					console.log(str);
+					//clearInterval(clearID);
+				}
+			}
+		function callJsVidName(num)
+		{
+			//alert(num);
+			num =20;
+			vod.videoTimeList(num,"4.mp4");
+		}
+		function c()
+		{
+			vod.callAsFunction(str)
+		}
+		</script>
+
+	</head>
+	<body  >
+		<input type="button" value="on" onclick="c()"/>
+		<div id="divFlashReplace">
+			<h1>Alternative content</h1>
+			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		</div>
+	
+	</body>
+</html>
